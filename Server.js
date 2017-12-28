@@ -24,7 +24,7 @@ router.use(BodyParser.text());
 function createItem(request,response) {
     var id = counter++;
     var item = request.body;
-    console.log('Create item*****************', id, item);
+    console.log('Create item : ', id, item);
     todoList[id] = item;
     response.writeHead(201,{'Content-Type' : 'text/plain', 'Location' : '/todo/' + id});
     response.end(item);
